@@ -18,7 +18,7 @@ public class MatMultiThread implements Callable<Matrix>{
     @Override
     public Matrix call() throws Exception {
            for (int rr = startIdx; rr < result.rows; rr+=step) {
-            for (int rc = startIdx; rc < result.cols; rc+=step) {
+            for (int rc = 0; rc < result.cols; rc+=1) {
                 double sum = 0;
                 for (int j = 0; j < b.rows; j+=1) {
                     sum += a.get(rr, j) * b.get(j, rc);                    
